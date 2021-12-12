@@ -20,7 +20,7 @@ Contributors:
 
 #include <math.h>
 #include <stdio.h>
-
+#include <time.h>
 #include "mosquitto_broker_internal.h"
 #include "memory_mosq.h"
 #include "time_mosq.h"
@@ -219,7 +219,8 @@ void sys_tree__update(struct mosquitto_db *db, int interval, time_t start_time)
 		uptime = now - start_time;
 		snprintf(buf, BUFLEN, "%d seconds", (int)uptime);
 		db__messages_easy_queue(db, NULL, "$SYS/broker/uptime", SYS_TREE_QOS, strlen(buf), buf, 1);
-
+		snprintf(buf, BUFLEN, "%d", (float)time(NULL));
+		db__messages_easy_queue(db, NULL, "$SYS/broker/systime", SYS_TREE_QOS, strlen(buf), buf, 1);
 		sys_tree__update_clients(db, buf);
 		bool initial_publish = false;
 		if(last_update == 0){

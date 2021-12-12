@@ -69,13 +69,13 @@ WITH_SRV:=no
 WITH_UUID:=yes
 
 # Build with websockets support on the broker.
-WITH_WEBSOCKETS:=no
+WITH_WEBSOCKETS:=yes
 
 # Use elliptic keys in broker
 WITH_EC:=yes
 
 # Build man page documentation by default.
-WITH_DOCS:=yes
+WITH_DOCS:=no
 
 # Build with client support for SOCK5 proxy.
 WITH_SOCKS:=yes
@@ -84,7 +84,7 @@ WITH_SOCKS:=yes
 WITH_STRIP:=no
 
 # Build static libraries
-WITH_STATIC_LIBRARIES:=no
+WITH_STATIC_LIBRARIES:=yes
 
 # Build shared libraries
 WITH_SHARED_LIBRARIES:=yes
@@ -105,7 +105,7 @@ WITH_BUNDLED_DEPS:=yes
 
 # Also bump lib/mosquitto.h, CMakeLists.txt,
 # installer/mosquitto.nsi, installer/mosquitto64.nsi
-VERSION=1.5.11
+VERSION=1.5.8
 
 # Client library SO version. Bump if incompatible API/ABI changes are made.
 SOVERSION=1
