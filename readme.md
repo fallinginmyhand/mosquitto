@@ -7,7 +7,10 @@ the `mosquitto_pub` and `mosquitto_sub` utilities for publishing and
 subscribing.
 
 Brench from  https://github.com/eclipse/mosquitto.git brench 1.5.x
-ADD boardcast broker's system in $SYS/broker/systime
+SET default version to 1.5.8
+ADD boardcast broker's system time : $SYS/broker/systime with epoch format 
+EXAMPLE message:
+$SYS/broker/systime 1639290112
 -- Chen Chien Hung
 
 ## Links
